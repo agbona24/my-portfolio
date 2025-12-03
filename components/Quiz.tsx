@@ -86,6 +86,25 @@ export default function Quiz() {
     setDirection(1);
   };
 
+  const getWhatsAppLink = () => {
+    // Build quiz results message
+    const quizResults = quizQuestions.map((q, index) => {
+      const selectedOption = q.options.find(opt => opt.value === answers[index]);
+      return `${q.question}\n→ ${selectedOption?.text || 'Not answered'}`;
+    }).join('\n\n');
+
+    const message = `
+*Quiz Results from Portfolio*
+
+${quizResults}
+
+---
+I'm interested in discussing my project with you!
+    `.trim();
+
+    return `${siteConfig.whatsapp}?text=${encodeURIComponent(message)}`;
+  };
+
   const progress = ((currentQuestion + 1) / quizQuestions.length) * 100;
 
   const slideVariants = {
@@ -330,7 +349,7 @@ export default function Quiz() {
                 </motion.a>
 
                 <motion.a
-                  href={siteConfig.whatsapp}
+                  href={getWhatsAppLink()}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, y: -2 }}

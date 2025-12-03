@@ -174,11 +174,131 @@ export default function Testimonials() {
             </motion.p>
           </div>
 
-          {/* Testimonials Grid */}
-          <div className="grid md:grid-cols-2 gap-8">
-            {siteConfig.testimonials.map((testimonial, index) => (
+          {/* Testimonials Grid (Desktop) / Carousel (Mobile) */}
+          {isMobile ? (
+            <div className="relative">
+              {/* Mobile Carousel */}
+              <div className="relative overflow-hidden">
+                <AnimatePresence mode="wait" custom={currentIndex}>
+                  <motion.div
+                    key={currentIndex}
+                    custom={currentIndex}
+                    initial={{ opacity: 0, x: 300 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -300 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    drag="x"
+                    dragConstraints={{ left: 0, right: 0 }}
+                    dragElastic={0.2}
+                    onDragEnd={(e, { offset, velocity }) => {
+                      const swipe = Math.abs(offset.x) * velocity.x;
+                      if (swipe < -10000) {
+                        nextSlide();
+                      } else if (swipe > 10000) {
+                        prevSlide();
+                      }
+                    }}
+                  >
+                    {renderTestimonialCard(siteConfig.testimonials[currentIndex], currentIndex)}
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              {/* Navigation Arrows */}
+              <div className="flex justify-center gap-4 mt-6">
+                <motion.button
+                  onClick={prevSlide}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full flex items-center justify-center shadow-lg"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </motion.button>
+                <motion.button
+                  onClick={nextSlide}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full flex items-center justify-center shadow-lg"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </motion.button>
+              </div>
+
+              {/* Dots Navigation */}
+              <div className="flex justify-center gap-2 mt-4">
+                {siteConfig.testimonials.map((_, index) => (
+                  <motion.button
+                    key={index}
+                    onClick={() => goToSlide(index)}
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.9 }}
+                    className={`w-2.5 h-2.5 rounded-full transition-all ${
+                      currentIndex === index
+                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 w-8'
+                        : 'bg-gray-300 dark:bg-gray-700'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 gap-8">
+              {siteConfig.testimonials.map((testimonial, index) => (
+                <div key={index}>
+                  {renderTestimonialCard(testimonial, index)}
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Call to action */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, delay: 1 }}
+            className="mt-16 text-center"
+          >
+            <motion.p
+              className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6"
+              animate={{
+                scale: [1, 1.02, 1],
+              }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              Ready to join these successful clients?
+            </motion.p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <motion.a
+                href="#contact"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all"
+              >
+                Start Your Project
+              </motion.a>
+              <motion.a
+                href={siteConfig.whatsapp}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-white border-2 border-gray-300 dark:border-gray-700 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all"
+              >
+                Chat on WhatsApp
+              </motion.a>
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+
+  function renderTestimonialCard(testimonial: typeof siteConfig.testimonials[0], index: number) {
+    return (
               <motion.div
-                key={index}
+                key={`testimonial-${index}`}
                 initial={{ opacity: 0, y: 50, scale: 0.9 }}
                 animate={
                   isInView
@@ -187,7 +307,7 @@ export default function Testimonials() {
                 }
                 transition={{
                   duration: 0.6,
-                  delay: 0.4 + index * 0.15,
+                  delay: isMobile ? 0 : 0.4 + index * 0.15,
                   type: "spring",
                   stiffness: 100,
                 }}
@@ -208,7 +328,7 @@ export default function Testimonials() {
                 />
 
                 <motion.div
-                  style={{
+                  style={isMobile ? {} : {
                     x: smoothMouseX,
                     y: smoothMouseY,
                   }}
@@ -394,46 +514,6 @@ export default function Testimonials() {
                   />
                 </motion.div>
               </motion.div>
-            ))}
-          </div>
-
-          {/* Call to action */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, delay: 1 }}
-            className="mt-16 text-center"
-          >
-            <motion.p
-              className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6"
-              animate={{
-                scale: [1, 1.02, 1],
-              }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              Ready to join these successful clients?
-            </motion.p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <motion.a
-                href="#contact"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all"
-              >
-                Start Your Project
-              </motion.a>
-              <motion.a
-                href={siteConfig.whatsapp}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-white border-2 border-gray-300 dark:border-gray-700 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all"
-              >
-                Chat on WhatsApp
-              </motion.a>
-            </div>
-          </motion.div>
-        </motion.div>
-      </div>
-    </section>
-  );
+    );
+  }
 }
