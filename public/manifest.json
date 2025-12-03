@@ -1,0 +1,60 @@
+{
+  "name": "Azeez Agbona - IT Specialist & Web Development Expert",
+  "short_name": "Azeez Portfolio",
+  "description": "10+ years experience in web development, SEO, digital marketing, and IT consulting",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "portfolio", "technology"],
+  "shortcuts": [
+    {
+      "name": "Contact Me",
+      "short_name": "Contact",
+      "url": "/#contact",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "View Projects",
+      "short_name": "Projects",
+      "url": "/#work",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Book Consultation",
+      "short_name": "Book",
+      "url": "/#booking",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
