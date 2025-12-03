@@ -42,9 +42,60 @@ export default function Navbar() {
               href="#"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+              className="relative group"
             >
-              {siteConfig.name.split(' ')[0]}
+              <div className="relative flex items-center gap-0.5">
+                {/* Glow effect */}
+                <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-lg opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500" />
+
+                {/* First A */}
+                <motion.span
+                  className="relative text-3xl sm:text-4xl font-black bg-gradient-to-br from-blue-600 to-purple-600 bg-clip-text text-transparent"
+                  animate={{
+                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                  }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  style={{
+                    backgroundImage: "linear-gradient(90deg, #3B82F6, #8B5CF6, #EC4899, #3B82F6)",
+                    backgroundSize: "200% auto",
+                  }}
+                >
+                  A
+                </motion.span>
+
+                {/* Dot separator with pulse */}
+                <motion.span
+                  className="relative w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 mx-0.5 sm:mx-1"
+                  animate={{
+                    scale: [1, 1.3, 1],
+                    opacity: [0.7, 1, 0.7],
+                  }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+
+                {/* Second A */}
+                <motion.span
+                  className="relative text-3xl sm:text-4xl font-black bg-gradient-to-br from-purple-600 to-pink-600 bg-clip-text text-transparent"
+                  animate={{
+                    backgroundPosition: ["100% 50%", "0% 50%", "100% 50%"],
+                  }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  style={{
+                    backgroundImage: "linear-gradient(90deg, #8B5CF6, #EC4899, #3B82F6, #8B5CF6)",
+                    backgroundSize: "200% auto",
+                  }}
+                >
+                  A
+                </motion.span>
+
+                {/* Underline decoration */}
+                <motion.div
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </div>
             </motion.a>
 
             {/* Desktop Navigation */}

@@ -72,9 +72,12 @@ export default function Contact() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent">
-            Get In Touch
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent">
+            Have a Question?
           </h2>
+          <p className="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
+            Send me a message and I&apos;ll respond within 24 hours
+          </p>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -82,10 +85,6 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl"
           >
-            <p className="text-center text-lg text-gray-700 dark:text-gray-300 mb-8">
-              I&apos;m always open to discussing new projects, creative ideas, or
-              opportunities to be part of your vision.
-            </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
