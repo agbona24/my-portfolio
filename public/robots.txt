@@ -1,0 +1,40 @@
+# *
+User-agent: *
+Allow: /
+
+# Disallow specific paths (if any)
+# Disallow: /api/
+# Disallow: /admin/
+
+# Host
+Host: https://harzotech.com.ng
+
+# Sitemaps
+Sitemap: https://harzotech.com.ng/sitemap.xml
+
+# Crawl-delay for specific bots (optional)
+# Crawl-delay: 10
+
+# Google Bot specific rules
+User-agent: Googlebot
+Allow: /
+
+# Bing Bot
+User-agent: bingbot
+Allow: /
+
+# Yahoo Bot
+User-agent: Slurp
+Allow: /
+
+# DuckDuckGo Bot
+User-agent: DuckDuckBot
+Allow: /
+
+# Baidu Bot
+User-agent: Baiduspider
+Allow: /
+
+# Yandex Bot
+User-agent: Yandex
+Allow: /
