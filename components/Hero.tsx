@@ -292,22 +292,26 @@ export default function Hero() {
                 <motion.div
                   key={tech.name}
                   initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1 + tech.delay, type: "spring" }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                    y: [0, -10, 0],
+                  }}
+                  transition={{
+                    opacity: { delay: 1 + tech.delay, duration: 0.5 },
+                    scale: { delay: 1 + tech.delay, type: "spring" },
+                    y: {
+                      duration: 3,
+                      delay: 1 + tech.delay,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }
+                  }}
                   whileHover={{ scale: 1.2, z: 50 }}
                   className="absolute px-4 py-2 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-xl border border-gray-200 dark:border-gray-800 shadow-lg cursor-pointer"
                   style={{
                     left: `${(index % 3) * 33}%`,
                     top: `${Math.floor(index / 3) * 40}%`,
-                  }}
-                  animate={{
-                    y: [0, -10, 0],
-                  }}
-                  transition={{
-                    duration: 3,
-                    delay: index * 0.2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
                   }}
                 >
                   <div className="flex items-center gap-2">
