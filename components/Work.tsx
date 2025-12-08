@@ -10,12 +10,25 @@ export default function Work() {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   const [filter, setFilter] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Extract unique technologies from all projects
+  const allTags = Array.from(new Set(siteConfig.projects.flatMap(p => p.tags)));
+  const filters = ["All", ...allTags.slice(0, 8)]; // Show top 8 tags
+
+  // Filter projects based on selected filter and search query
+  const filteredProjects = siteConfig.projects.filter(project => {
+    const matchesFilter = filter === "All" || project.tags.includes(filter);
+    const matchesSearch = searchQuery === "" ||
+      project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+    return matchesFilter && matchesSearch;
+  });
 
   // Group projects by type for better showcase
-  const featuredProjects = siteConfig.projects.slice(0, 6);
-  const otherProjects = siteConfig.projects.slice(6);
-
-  const filters = ["All", "Web Apps", "E-commerce", "Healthcare", "Real Estate", "Enterprise"];
+  const featuredProjects = filteredProjects.slice(0, 6);
+  const otherProjects = filteredProjects.slice(6);
 
   return (
     <section id="work" className="py-20 px-4 sm:px-6 bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
@@ -64,6 +77,92 @@ export default function Work() {
               <span><strong className="text-gray-900 dark:text-white">{siteConfig.stats.technologies}</strong> Technologies</span>
             </div>
           </div>
+        </motion.div>
+
+        {/* Search and Filter */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mb-12"
+        >
+          {/* Search Bar */}
+          <div className="max-w-2xl mx-auto mb-8">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search projects by name, description, or technology..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full px-6 py-4 pl-14 rounded-2xl bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-800 focus:border-blue-500 dark:focus:border-blue-500 outline-none transition-all text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-lg"
+              />
+              <svg
+                className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 p-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
+                >
+                  <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* Filter Buttons */}
+          <div className="flex flex-wrap justify-center gap-3">
+            {filters.map((filterOption, index) => (
+              <motion.button
+                key={filterOption}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                transition={{ delay: 0.5 + index * 0.05 }}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setFilter(filterOption)}
+                className={`px-6 py-2.5 rounded-full font-medium transition-all shadow-md ${
+                  filter === filterOption
+                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
+                    : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-800"
+                }`}
+              >
+                {filterOption}
+              </motion.button>
+            ))}
+          </div>
+
+          {/* Results Count */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center mt-6 text-gray-600 dark:text-gray-400"
+          >
+            Showing <strong className="text-blue-600 dark:text-blue-400">{filteredProjects.length}</strong> project{filteredProjects.length !== 1 ? 's' : ''}
+            {(searchQuery || filter !== "All") && (
+              <button
+                onClick={() => {
+                  setSearchQuery("");
+                  setFilter("All");
+                }}
+                className="ml-2 text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                Clear filters
+              </button>
+            )}
+          </motion.p>
         </motion.div>
 
         {/* Featured Projects - Large Showcase */}

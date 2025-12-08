@@ -6,7 +6,7 @@ export const siteConfig = {
   name: "Abdul-Azeez Agbona",
   title: "IT Specialist & Web Development Expert",
   bio: "A versatile IT Specialist with over 10 years of experience in web development, e-commerce, digital marketing, and IT consulting for individuals, businesses, and government entities across various sectors.",
-  email: "Abdul-Azeez.agbona.o@gmail.com",
+  email: "azeez.agbona.o@gmail.com",
   location: "Lagos, Nigeria",
   phone: "07069716822",
   whatsapp: "https://wa.me/2347069716822?text=Hello%20Abdul-Azeez,%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20with%20you.",
@@ -277,34 +277,34 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/abdulAbdul-Azeezagbona/",
     facebook: "https://www.facebook.com/Abdul-Azeezagbona",
     whatsapp: "https://wa.me/2347069716822?text=Hello%20Abdul-Azeez,%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20with%20you.",
-    email: "mailto:Abdul-Azeez.agbona.o@gmail.com",
+    email: "mailto:azeez.agbona.o@gmail.com",
   },
 
   // Testimonials
   testimonials: [
     {
       name: "Dr. Sarah Johnson",
-      role: "CEO, Exclusive Smile Nigeria",
-      company: "Exclusive Smile",
+      role: "Founder, Business Growth Hub",
+      company: "Business Growth Hub",
       content: "Abdul-Azeez's sales funnel system transformed our patient acquisition. We saw a 300% increase in qualified leads within 3 months. His expertise in healthcare marketing is exceptional.",
       rating: 5,
     },
     {
-      name: "Michael Chen",
-      role: "Director, Immovables Group",
+      name: "Jude Afuda-iyoke",
+      role: "Managing Director/CEO, Immovables Group",
       company: "Immovables Group",
       content: "Outstanding work on our real estate platform. The CRM integration and property management system exceeded expectations. Highly professional and delivered on time.",
       rating: 5,
     },
     {
-      name: "Yemi Adeyemi",
+      name: "Olusesan Sesan",
       role: "MD, Lagos Chamber of Commerce",
       company: "LACIAC",
       content: "Developed a robust membership portal that serves thousands of businesses. Abdul-Azeez's technical expertise and understanding of our needs made the project a huge success.",
       rating: 5,
     },
     {
-      name: "James Robertson",
+      name: "Yusuf Adegbola",
       role: "Owner, Majestic Services UK",
       company: "Majestic Services",
       content: "The booking system and service tracking platform has streamlined our operations significantly. Excellent communication throughout the project.",
@@ -330,7 +330,7 @@ export const siteConfig = {
     title: "Abdul-Azeez Agbona - IT Specialist & Web Development Expert",
     description: "10+ years experience in web development, SEO, digital marketing, and IT consulting. Specializing in Laravel, WordPress, ERP systems, and business solutions.",
     url: "https://harzotech.com.ng",
-    image: "/og-image.jpg", // Add this image to public folder
+    image: "/headshot.jpg",
   },
 };
 

@@ -11,6 +11,7 @@ export default function Hero() {
 
   const [typedText, setTypedText] = useState("");
   const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
+  const [greeting, setGreeting] = useState("");
 
   const skills = [
     "Full-Stack Development",
@@ -19,6 +20,18 @@ export default function Hero() {
     "Digital Marketing",
     "Laravel & React Expert",
   ];
+
+  // Dynamic time-based greeting
+  useEffect(() => {
+    const hour = new Date().getHours();
+    if (hour < 12) {
+      setGreeting("Good morning");
+    } else if (hour < 18) {
+      setGreeting("Good afternoon");
+    } else {
+      setGreeting("Good evening");
+    }
+  }, []);
 
   // Typing animation
   useEffect(() => {
@@ -122,8 +135,18 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4">
+                {greeting && (
+                  <motion.span
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="block text-2xl sm:text-3xl lg:text-4xl text-transparent bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text mb-2"
+                  >
+                    {greeting}! 👋
+                  </motion.span>
+                )}
                 <span className="block text-gray-900 dark:text-white mb-2">
-                  Hi, I'm
+                  I'm
                 </span>
                 <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                   {siteConfig.name}

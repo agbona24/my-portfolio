@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { siteConfig } from "@/config/site";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -115,7 +116,14 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* Resume Button - Hidden on small mobile */}
+            {/* Right Side Actions */}
+            <div className="flex items-center gap-3">
+              {/* Theme Toggle */}
+              <div className="hidden sm:block">
+                <ThemeToggle />
+              </div>
+
+              {/* Resume Button - Hidden on small mobile */}
             <motion.a
               href={siteConfig.resume.url}
               target="_blank"
@@ -131,8 +139,8 @@ export default function Navbar() {
               <span className="hidden lg:inline">Resume</span>
             </motion.a>
 
-            {/* Mobile Menu Button */}
-            <motion.button
+              {/* Mobile Menu Button */}
+              <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
@@ -150,7 +158,8 @@ export default function Navbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 )}
               </svg>
-            </motion.button>
+              </motion.button>
+            </div>
           </div>
         </div>
       </motion.nav>
@@ -218,6 +227,11 @@ export default function Navbar() {
 
                 {/* Bottom Actions */}
                 <div className="p-6 border-t border-gray-200 dark:border-gray-800 space-y-4">
+                  {/* Theme Toggle for Mobile */}
+                  <div className="flex justify-center">
+                    <ThemeToggle />
+                  </div>
+
                   <motion.a
                     href={siteConfig.resume.url}
                     target="_blank"

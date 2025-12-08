@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.seo.url),
@@ -30,6 +31,8 @@ export const metadata: Metadata = {
     // Technologies
     "Full Stack Developer",
     "TypeScript Developer",
+    "Tailwind CSS Expert",
+    "Vite Build Tool",
     "PHP Laravel Expert",
     "MySQL Database Expert",
     "API Development",
@@ -113,7 +116,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: `${siteConfig.seo.url}/og-image.jpg`,
+        url: `${siteConfig.seo.url}/headshot.jpg`,
         width: 1200,
         height: 630,
         alt: `${siteConfig.name} - ${siteConfig.title}`,
@@ -127,7 +130,7 @@ export const metadata: Metadata = {
     title: siteConfig.seo.title,
     description: siteConfig.seo.description,
     creator: "@Abdul-Azeezagbona",
-    images: [`${siteConfig.seo.url}/og-image.jpg`],
+    images: [`${siteConfig.seo.url}/headshot.jpg`],
   },
   robots: {
     index: true,
@@ -166,7 +169,7 @@ export default function RootLayout({
     "name": siteConfig.name,
     "alternateName": "Azeez Agbona",
     "url": siteConfig.seo.url,
-    "image": `${siteConfig.seo.url}/og-image.jpg`,
+    "image": `${siteConfig.seo.url}/headshot.jpg`,
     "jobTitle": siteConfig.title,
     "description": siteConfig.bio,
     "email": siteConfig.email,
@@ -247,7 +250,7 @@ export default function RootLayout({
     "description": siteConfig.seo.description,
     "url": siteConfig.seo.url,
     "logo": `${siteConfig.seo.url}/icon-512.png`,
-    "image": `${siteConfig.seo.url}/og-image.jpg`,
+    "image": `${siteConfig.seo.url}/headshot.jpg`,
     "telephone": `+234${siteConfig.phone}`,
     "email": siteConfig.email,
     "address": {
@@ -360,7 +363,9 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased touch-manipulation">
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
