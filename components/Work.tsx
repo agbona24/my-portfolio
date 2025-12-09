@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { siteConfig } from "@/config/site";
+import Image from "next/image";
 
 export default function Work() {
   const ref = useRef(null);
@@ -186,10 +187,14 @@ export default function Work() {
                 <div className={`relative h-48 sm:h-56 overflow-hidden ${!project.image ? `bg-gradient-to-br ${project.gradient}` : ''}`}>
                   {project.image ? (
                     <>
-                      <img
+                      <Image
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                        loading="lazy"
+                        quality={75}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/70 transition-colors duration-500" />
                     </>
@@ -330,10 +335,14 @@ export default function Work() {
                 <div className={`relative h-32 overflow-hidden ${!project.image ? `bg-gradient-to-r ${project.gradient}` : ''}`}>
                   {project.image ? (
                     <>
-                      <img
+                      <Image
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                        loading="lazy"
+                        quality={75}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                     </>
