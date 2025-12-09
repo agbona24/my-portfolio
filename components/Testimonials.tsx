@@ -174,86 +174,101 @@ export default function Testimonials() {
             </motion.p>
           </div>
 
-          {/* Testimonials Grid (Desktop) / Carousel (Mobile) */}
-          {isMobile ? (
-            <div className="relative">
-              {/* Mobile Carousel */}
-              <div className="relative overflow-hidden">
-                <AnimatePresence mode="wait" custom={currentIndex}>
-                  <motion.div
-                    key={currentIndex}
-                    custom={currentIndex}
-                    initial={{ opacity: 0, x: 300 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -300 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                    drag="x"
-                    dragConstraints={{ left: 0, right: 0 }}
-                    dragElastic={0.2}
-                    onDragEnd={(e, { offset, velocity }) => {
-                      const swipe = Math.abs(offset.x) * velocity.x;
-                      if (swipe < -10000) {
-                        nextSlide();
-                      } else if (swipe > 10000) {
-                        prevSlide();
+          {/* Testimonials Carousel */}
+          <div className="relative">
+            {/* Carousel Container */}
+            <div className="relative overflow-hidden">
+              <motion.div
+                className={isMobile ? "flex" : "flex gap-8"}
+                animate={{
+                  x: isMobile ? -currentIndex * 100 + "%" : -currentIndex * (100 / 3) + "%",
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                drag={isMobile ? "x" : false}
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.2}
+                onDragEnd={
+                  isMobile
+                    ? (e, { offset, velocity }) => {
+                        const swipe = Math.abs(offset.x) * velocity.x;
+                        if (swipe < -10000) {
+                          nextSlide();
+                        } else if (swipe > 10000) {
+                          prevSlide();
+                        }
                       }
-                    }}
-                  >
-                    {renderTestimonialCard(siteConfig.testimonials[currentIndex], currentIndex)}
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-
-              {/* Navigation Arrows */}
-              <div className="flex justify-center gap-4 mt-6">
-                <motion.button
-                  onClick={prevSlide}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full flex items-center justify-center shadow-lg"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </motion.button>
-                <motion.button
-                  onClick={nextSlide}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full flex items-center justify-center shadow-lg"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </motion.button>
-              </div>
-
-              {/* Dots Navigation */}
-              <div className="flex justify-center gap-2 mt-4">
-                {siteConfig.testimonials.map((_, index) => (
-                  <motion.button
+                    : undefined
+                }
+              >
+                {siteConfig.testimonials.map((testimonial, index) => (
+                  <div
                     key={index}
-                    onClick={() => goToSlide(index)}
-                    whileHover={{ scale: 1.2 }}
-                    whileTap={{ scale: 0.9 }}
-                    className={`w-2.5 h-2.5 rounded-full transition-all ${
-                      currentIndex === index
-                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 w-8'
-                        : 'bg-gray-300 dark:bg-gray-700'
-                    }`}
-                  />
+                    className={isMobile ? "w-full flex-shrink-0 px-4" : "w-1/3 flex-shrink-0 px-4"}
+                  >
+                    {renderTestimonialCard(testimonial, index)}
+                  </div>
                 ))}
-              </div>
+              </motion.div>
             </div>
-          ) : (
-            <div className="grid md:grid-cols-2 gap-8">
-              {siteConfig.testimonials.map((testimonial, index) => (
-                <div key={index}>
-                  {renderTestimonialCard(testimonial, index)}
-                </div>
+
+            {/* Navigation Arrows */}
+            <div className="flex justify-center gap-4 mt-8">
+              <motion.button
+                onClick={prevSlide}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                disabled={currentIndex === 0}
+                className={`w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full flex items-center justify-center shadow-lg transition-opacity ${
+                  currentIndex === 0 ? "opacity-50 cursor-not-allowed" : "opacity-100"
+                }`}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </motion.button>
+              <motion.button
+                onClick={nextSlide}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                disabled={
+                  isMobile
+                    ? currentIndex === siteConfig.testimonials.length - 1
+                    : currentIndex >= siteConfig.testimonials.length - 3
+                }
+                className={`w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full flex items-center justify-center shadow-lg transition-opacity ${
+                  (isMobile
+                    ? currentIndex === siteConfig.testimonials.length - 1
+                    : currentIndex >= siteConfig.testimonials.length - 3)
+                    ? "opacity-50 cursor-not-allowed"
+                    : "opacity-100"
+                }`}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </motion.button>
+            </div>
+
+            {/* Dots Navigation */}
+            <div className="flex justify-center gap-2 mt-4">
+              {(isMobile
+                ? siteConfig.testimonials
+                : siteConfig.testimonials.slice(0, -2)
+              ).map((_, index) => (
+                <motion.button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                  className={`w-2.5 h-2.5 rounded-full transition-all ${
+                    currentIndex === index
+                      ? "bg-gradient-to-r from-blue-600 to-purple-600 w-8"
+                      : "bg-gray-300 dark:bg-gray-700"
+                  }`}
+                />
               ))}
             </div>
-          )}
+          </div>
 
           {/* Call to action */}
           <motion.div

@@ -1,24 +1,20 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
 
 export default function Hero() {
-  const { scrollY } = useScroll();
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
-  const y = useTransform(scrollY, [0, 300], [0, 100]);
-
   const [typedText, setTypedText] = useState("");
   const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
   const [greeting, setGreeting] = useState("");
 
   const skills = [
-    "Full-Stack Development",
-    "UI/UX Design",
-    "Sales Funnel Systems",
-    "Digital Marketing",
-    "Laravel & React Expert",
+    "Full-Stack Web Developer",
+    "Sales Funnel Architect",
+    "UI/UX Designer",
+    "Digital Marketing Strategist",
+    "Business Growth Consultant",
   ];
 
   // Dynamic time-based greeting
@@ -100,7 +96,6 @@ export default function Hero() {
 
       {/* Main Content Container */}
       <motion.div
-        style={{ opacity, y }}
         className="relative z-10 max-w-7xl mx-auto w-full"
       >
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">

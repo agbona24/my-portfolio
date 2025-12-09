@@ -182,37 +182,49 @@ export default function Work() {
                 whileHover={{ y: -8 }}
                 className="group relative bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-800"
               >
-                {/* Gradient Header */}
-                <div className={`relative h-48 sm:h-56 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
-                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-500" />
-
-                  {/* Floating Shapes */}
-                  <div className="absolute inset-0 overflow-hidden opacity-20">
-                    <motion.div
-                      className="absolute top-4 right-4 w-20 h-20 bg-white rounded-full"
-                      animate={{
-                        y: [0, -10, 0],
-                        x: [0, 10, 0],
-                      }}
-                      transition={{
-                        duration: 4,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
-                    />
-                    <motion.div
-                      className="absolute bottom-4 left-4 w-16 h-16 bg-white rounded-full"
-                      animate={{
-                        y: [0, 10, 0],
-                        x: [0, -10, 0],
-                      }}
-                      transition={{
-                        duration: 5,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
-                    />
-                  </div>
+                {/* Project Image or Gradient Header */}
+                <div className={`relative h-48 sm:h-56 overflow-hidden ${!project.image ? `bg-gradient-to-br ${project.gradient}` : ''}`}>
+                  {project.image ? (
+                    <>
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/70 transition-colors duration-500" />
+                    </>
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-500" />
+                      {/* Floating Shapes */}
+                      <div className="absolute inset-0 overflow-hidden opacity-20">
+                        <motion.div
+                          className="absolute top-4 right-4 w-20 h-20 bg-white rounded-full"
+                          animate={{
+                            y: [0, -10, 0],
+                            x: [0, 10, 0],
+                          }}
+                          transition={{
+                            duration: 4,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                          }}
+                        />
+                        <motion.div
+                          className="absolute bottom-4 left-4 w-16 h-16 bg-white rounded-full"
+                          animate={{
+                            y: [0, 10, 0],
+                            x: [0, -10, 0],
+                          }}
+                          transition={{
+                            duration: 5,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                          }}
+                        />
+                      </div>
+                    </>
+                  )}
 
                   {/* Live Badge */}
                   {project.liveUrl && project.liveUrl !== "#" && (
@@ -312,41 +324,65 @@ export default function Work() {
                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4, delay: 0.9 + index * 0.05 }}
                 whileHover={{ scale: 1.03, y: -4 }}
-                className="group relative bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800"
+                className="group relative bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800"
               >
-                {/* Small gradient indicator */}
-                <div className={`w-full h-2 bg-gradient-to-r ${project.gradient} rounded-t-xl mb-4`} />
+                {/* Project Image or Gradient Header */}
+                <div className={`relative h-32 overflow-hidden ${!project.image ? `bg-gradient-to-r ${project.gradient}` : ''}`}>
+                  {project.image ? (
+                    <>
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                    </>
+                  ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br opacity-90" />
+                  )}
 
-                <h4 className="font-bold text-gray-900 dark:text-white mb-2 line-clamp-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  {project.title}
-                </h4>
-
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {project.tags.slice(0, 2).map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-0.5 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded text-xs font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                  {/* Live Badge */}
+                  {project.liveUrl && project.liveUrl !== "#" && (
+                    <div className="absolute top-2 right-2 px-2 py-1 bg-green-500 text-white rounded-full text-xs font-bold flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
+                      LIVE
+                    </div>
+                  )}
                 </div>
 
-                {project.liveUrl && project.liveUrl !== "#" && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-sm text-blue-600 dark:text-blue-400 font-medium hover:gap-2 transition-all"
-                  >
-                    <span>View</span>
-                    <span>→</span>
-                  </a>
-                )}
+                {/* Content */}
+                <div className="p-4">
+                  <h4 className="font-bold text-gray-900 dark:text-white mb-2 line-clamp-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    {project.title}
+                  </h4>
+
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {project.tags.slice(0, 2).map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-0.5 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded text-xs font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {project.liveUrl && project.liveUrl !== "#" && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-sm text-blue-600 dark:text-blue-400 font-medium hover:gap-2 transition-all"
+                    >
+                      <span>View</span>
+                      <span>→</span>
+                    </a>
+                  )}
+                </div>
               </motion.div>
             ))}
           </div>

@@ -32,7 +32,7 @@ location: "Your City, Country"
 stats: {
   yearsExperience: "5+",
   projectsCompleted: "50+",
-  happyClients: "30+",
+  happyClients: "20+",
   technologies: "20+",
 }
 ```

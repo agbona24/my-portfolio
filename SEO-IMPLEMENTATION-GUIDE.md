@@ -167,7 +167,7 @@ Your portfolio has been fully optimized for search engines with comprehensive SE
 **What to include:**
 - Your name: "Abdul-Azeez Agbona"
 - Title: "IT Specialist & Web Development Expert"
-- Key stats: "10+ Years | 100+ Projects | Lagos, Nigeria"
+- Key stats: "10+ Years | 20+ Projects | Lagos, Nigeria"
 - Your photo (optional but recommended)
 - Gradient background matching site theme
 
