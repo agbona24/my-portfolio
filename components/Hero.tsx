@@ -5,9 +5,10 @@ import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
 
 export default function Hero() {
+  const [mounted, setMounted] = useState(false);
   const [typedText, setTypedText] = useState("");
   const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
-  const [greeting, setGreeting] = useState("");
+  const [greeting, setGreeting] = useState("Hello");
 
   const skills = [
     "Full-Stack Web Developer",
@@ -19,6 +20,7 @@ export default function Hero() {
 
   // Dynamic time-based greeting
   useEffect(() => {
+    setMounted(true);
     const hour = new Date().getHours();
     if (hour < 12) {
       setGreeting("Good morning");
@@ -130,16 +132,15 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4">
-                {greeting && (
-                  <motion.span
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    className="block text-2xl sm:text-3xl lg:text-4xl text-transparent bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text mb-2"
-                  >
-                    {greeting}! 👋
-                  </motion.span>
-                )}
+                <motion.span
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="block text-2xl sm:text-3xl lg:text-4xl text-transparent bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text mb-2"
+                  suppressHydrationWarning
+                >
+                  {greeting}! 👋
+                </motion.span>
                 <span className="block text-gray-900 dark:text-white mb-2">
                   I'm
                 </span>
