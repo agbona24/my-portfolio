@@ -4,8 +4,8 @@
 export const siteConfig = {
   // Personal Info
   name: "Abdul-Azeez Agbona",
-  title: "IT Specialist & Web Development Expert",
-  bio: "A versatile IT Specialist with over 10 years of experience in web development, e-commerce, digital marketing, and IT consulting for individuals, businesses, and government entities across various sectors.",
+  title: "IT Specialist & Full-Stack Developer",
+  bio: "A versatile IT Specialist & Full-Stack Developer with over 10 years of experience building high-performance digital systems, SaaS platforms, and AI-powered solutions for individuals, businesses, and government organizations.",
   email: "azeez.agbona.o@gmail.com",
   location: "Lagos, Nigeria",
   phone: "07069716822",
@@ -23,9 +23,10 @@ export const siteConfig = {
   // About Section
   about: {
     description: [
-      "I am a versatile IT Specialist with over 10 years of experience in web development, e-commerce, digital marketing, and IT consulting for individuals, businesses, and government entities across various sectors. Adept at developing web applications, optimizing digital marketing strategies, and creating effective sales funnels and business models.",
-      "Expert in building high-converting sales funnel systems that drive business growth. Successfully designed and implemented comprehensive sales funnel solutions for leading healthcare brands including Exclusive Smile Lagos and Phoenix Derma Lagos, integrating marketing automation, CRM systems, and conversion optimization strategies.",
-      "Skilled in leading IT teams, managing complex projects, and delivering tailored solutions that enhance operational efficiency and drive business growth. Strong communicator with a proven track record of managing client relationships and delivering innovative technical solutions.",
+      "I am a versatile IT Specialist & Full-Stack Developer with over 10 years of experience building high-performance digital systems for individuals, businesses, and government organizations. My expertise spans web development, SaaS engineering, e-commerce, digital marketing, SEO, AI/ML, and IT consulting, enabling me to deliver end-to-end technological and growth-focused solutions.",
+      "I have developed and deployed multiple SaaS platforms, enterprise applications, and intelligent digital products powered by machine learning, data science, artificial intelligence, and API-driven architectures. My systems are built to scale, automate processes, and deliver measurable business value.",
+      "As both a Sales Funnel Architect and SEO Strategist, I help businesses grow organically and convert more customers. I have implemented high-converting funnel ecosystems and full digital growth frameworks for top healthcare brands such as Exclusive Smile Lagos and Phoenix Derma Lagos, integrating CRM automation, analytics, and conversion optimization. Through SEO-focused content strategies, technical SEO improvements, and search-intent driven optimization, I have helped businesses increase their organic traffic, boost visibility, and generate consistent inbound leads without relying heavily on ads.",
+      "Beyond development, I excel in project leadership, guiding IT teams, managing complex implementations, and delivering tailored solutions that enhance operational efficiency. With strong communication skills and a proven history of client success, I consistently help organizations transform their ideas into powerful, scalable digital products — and grow them sustainably through smart technology, automation, and organic search strategy.",
     ],
   },
 
