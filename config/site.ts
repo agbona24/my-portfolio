@@ -5,7 +5,7 @@ export const siteConfig = {
   // Personal Info
   name: "Abdul-Azeez Agbona",
   title: "IT Specialist & Full-Stack Developer",
-  bio: "A versatile IT Specialist & Full-Stack Developer with over 10 years of experience building high-performance digital systems, SaaS platforms, and AI-powered solutions for individuals, businesses, and government organizations.",
+  bio: "I'm an experienced IT Specialist, Full-Stack Developer, SaaS Engineer, and SEO Strategist with over a decade of building scalable digital platforms powered by automation, AI/ML, CRM workflows, and API-driven architectures. I help businesses grow through high-converting sales funnels and organic SEO strategies, improving visibility, traffic, and conversions.",
   email: "azeez.agbona.o@gmail.com",
   location: "Lagos, Nigeria",
   phone: "07069716822",
@@ -390,8 +390,8 @@ export const siteConfig = {
 
   // SEO
   seo: {
-    title: "Abdul-Azeez Agbona - IT Specialist & Web Development Expert",
-    description: "10+ years experience in web development, SEO, digital marketing, and IT consulting. Specializing in Laravel, WordPress, ERP systems, and business solutions.",
+    title: "Abdul-Azeez Agbona - IT Specialist & Full-Stack Developer",
+    description: "I'm an experienced IT Specialist, Full-Stack Developer, SaaS Engineer, and SEO Strategist with over a decade of building scalable digital platforms powered by automation, AI/ML, CRM workflows, and API-driven architectures. I help businesses grow through high-converting sales funnels and organic SEO strategies, improving visibility, traffic, and conversions.",
     url: "https://harzotech.com.ng",
     image: "/headshot.jpg",
   },
