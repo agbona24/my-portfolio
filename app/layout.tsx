@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import FloatingActions from "@/components/FloatingActions";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.seo.url),
@@ -365,6 +366,7 @@ export default function RootLayout({
       <body className="antialiased touch-manipulation">
         <ThemeProvider>
           {children}
+          <FloatingActions />
         </ThemeProvider>
       </body>
     </html>

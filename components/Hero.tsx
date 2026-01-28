@@ -13,9 +13,9 @@ export default function Hero() {
   const skills = [
     "Full-Stack Web Developer",
     "Sales Funnel Architect",
+    "Agentic AI Automation",
     "UI/UX Designer",
     "Digital Marketing Strategist",
-    "Business Growth Consultant",
   ];
 
   // Dynamic time-based greeting
@@ -59,6 +59,8 @@ export default function Hero() {
     { name: "Node.js", icon: "🟢", delay: 0.6 },
     { name: "MySQL", icon: "🗄️", delay: 0.8 },
     { name: "WordPress", icon: "📝", delay: 1.0 },
+    { name: "AI", icon: "🤖", delay: 1.2 },
+    { name: "Automation", icon: "⚡", delay: 1.4 },
   ];
 
   return (

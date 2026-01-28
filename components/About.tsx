@@ -78,23 +78,24 @@ export default function About() {
   }, [isInView]);
 
   const skills = [
-    { name: "Laravel", icon: "🔷", color: "from-red-500 to-orange-500" },
-    { name: "React", icon: "⚛️", color: "from-cyan-500 to-blue-500" },
-    { name: "Next.js", icon: "▲", color: "from-gray-700 to-gray-900" },
-    { name: "WordPress", icon: "📝", color: "from-blue-600 to-blue-800" },
-    { name: "Sales Funnels", icon: "📊", color: "from-green-500 to-emerald-600" },
-    { name: "SEO", icon: "🎯", color: "from-purple-500 to-pink-500" },
+    { name: "Web Dev", icon: "🌐", color: "from-blue-500 to-cyan-500" },
+    { name: "App Dev", icon: "📱", color: "from-purple-500 to-pink-500" },
+    { name: "Automation", icon: "⚡", color: "from-yellow-500 to-orange-500" },
+    { name: "Sales Funnel", icon: "📊", color: "from-green-500 to-emerald-600" },
+    { name: "IT Consulting", icon: "💼", color: "from-slate-600 to-gray-800" },
+    { name: "SaaS Development", icon: "☁️", color: "from-sky-500 to-blue-600" },
+    { name: "Data Analytics", icon: "📈", color: "from-pink-500 to-rose-600" },
   ];
 
   return (
     <section
       id="about"
-      className="relative py-20 px-4 sm:px-6 overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-white dark:from-gray-950 dark:via-blue-950/10 dark:to-gray-950"
+      className="relative py-20 px-4 sm:px-6 overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 dark:from-gray-950 dark:via-blue-950 dark:to-indigo-950"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-20 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"
+          className="absolute top-20 right-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3],
@@ -106,7 +107,7 @@ export default function About() {
           }}
         />
         <motion.div
-          className="absolute bottom-20 left-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
+          className="absolute bottom-20 left-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.3, 0.6, 0.3],
@@ -134,18 +135,18 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="inline-block mb-4"
             >
-              <div className="flex items-center gap-2 px-4 py-2 bg-purple-100 dark:bg-purple-900/30 rounded-full">
+              <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
                 <span className="text-2xl">👨‍💻</span>
-                <span className="text-sm font-semibold text-purple-600 dark:text-purple-400">
+                <span className="text-sm font-semibold text-blue-200">
                   My Story
                 </span>
               </div>
             </motion.div>
 
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 dark:from-white dark:via-blue-100 dark:to-purple-100 bg-clip-text text-transparent">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-white">
               Turning Vision Into Reality
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto">
               A decade of building exceptional digital experiences that drive real business results
             </p>
           </motion.div>
@@ -258,7 +259,7 @@ export default function About() {
                     initial={{ opacity: 0, x: 50 }}
                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
                     transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                    className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
+                    className="text-base sm:text-lg text-blue-100 leading-relaxed"
                   >
                     {paragraph}
                   </motion.p>
@@ -287,12 +288,12 @@ export default function About() {
                     className="relative group"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className="relative p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 hover:border-blue-500 dark:hover:border-blue-500 transition-all">
+                    <div className="relative p-6 bg-white/10 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 hover:border-blue-400 transition-all">
                       <div className="text-3xl mb-2">{stat.icon}</div>
-                      <div className={`text-3xl sm:text-4xl font-black bg-gradient-to-r from-${stat.color}-600 to-${stat.color}-400 bg-clip-text text-transparent`}>
+                      <div className={`text-3xl sm:text-4xl font-black text-white`}>
                         {stat.value}{stat.suffix}
                       </div>
-                      <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-medium mt-1">
+                      <div className="text-xs sm:text-sm text-blue-200 font-medium mt-1">
                         {stat.label}
                       </div>
                     </div>
@@ -329,7 +330,7 @@ export default function About() {
                   download
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-2xl font-semibold shadow-lg border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all flex items-center gap-2"
+                  className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-2xl font-semibold shadow-lg border-2 border-white/20 hover:border-blue-400 hover:bg-white/20 transition-all flex items-center gap-2"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />

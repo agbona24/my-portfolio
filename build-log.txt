@@ -1,0 +1,21 @@
+
+> my-portfolio@1.0.0 build
+> next build
+
+   ▲ Next.js 16.0.8 (Turbopack)
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 1939.4ms
+   Running TypeScript ...
+   Collecting page data using 7 workers ...
+   Generating static pages using 7 workers (0/3) ...
+ ✓ Generating static pages using 7 workers (3/3) in 260.0ms
+   Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+└ ○ /_not-found
+
+
+○  (Static)  prerendered as static content
+
