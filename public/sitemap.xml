@@ -1,62 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- Homepage -->
   <url>
-    <loc>https://harzotech.com.ng</loc>
-    <lastmod>2025-12-03</lastmod>
+    <loc>https://azeezagbona.com</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- About Section -->
+  <!-- Primary keyword landing page: Web Developer in Nigeria -->
   <url>
-    <loc>https://harzotech.com.ng#about</loc>
-    <lastmod>2025-12-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Work/Projects Section -->
-  <url>
-    <loc>https://harzotech.com.ng#work</loc>
-    <lastmod>2025-12-03</lastmod>
+    <loc>https://azeezagbona.com/web-developer-nigeria</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Skills Section -->
+  <!-- Web Developer in Lagos -->
   <url>
-    <loc>https://harzotech.com.ng#skills</loc>
-    <lastmod>2025-12-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Testimonials Section -->
-  <url>
-    <loc>https://harzotech.com.ng#testimonials</loc>
-    <lastmod>2025-12-03</lastmod>
+    <loc>https://azeezagbona.com/web-developer-lagos</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Booking Section -->
+  <!-- Web Development Agency in Africa -->
   <url>
-    <loc>https://harzotech.com.ng#booking</loc>
-    <lastmod>2025-12-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://azeezagbona.com/web-development-agency-africa</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Contact Section -->
+  <!-- Industry-vertical keyword pages -->
   <url>
-    <loc>https://harzotech.com.ng#contact</loc>
-    <lastmod>2025-12-03</lastmod>
+    <loc>https://azeezagbona.com/real-estate-website-development-nigeria</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://azeezagbona.com/fintech-app-development-nigeria</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://azeezagbona.com/healthcare-website-developer-nigeria</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Service-line keyword pages -->
+  <url>
+    <loc>https://azeezagbona.com/sales-funnel-expert-nigeria</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://azeezagbona.com/custom-software-development-nigeria</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://azeezagbona.com/whatsapp-ai-agent-nigeria</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://azeezagbona.com/ai-workflow-automation-nigeria</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://azeezagbona.com/seo-agency-nigeria</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://azeezagbona.com/website-cost-nigeria</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- AI Website Agency (product/sales page) -->
+  <url>
+    <loc>https://azeezagbona.com/ai-website-agency</loc>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Online Sales Machine (product/sales page) -->
+  <url>
+    <loc>https://azeezagbona.com/online-sales-machine</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
 </urlset>

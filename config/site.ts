@@ -3,29 +3,34 @@
 
 export const siteConfig = {
   // Personal Info
-  name: "Abdul-Azeez Agbona",
-  title: "IT Specialist & Full-Stack Developer",
-  bio: "I'm an experienced IT Specialist, Full-Stack Developer, SaaS Engineer, and SEO Strategist with over a decade of building scalable digital platforms powered by automation, AI/ML, CRM workflows, and API-driven architectures. I help businesses grow through high-converting sales funnels and organic SEO strategies, improving visibility, traffic, and conversions.",
+  // CANONICAL NAME — keep this consistent EVERYWHERE (schema, socials, profiles).
+  // A single, consistent name is what lets Google's Knowledge Graph + AI engines
+  // recognize you as ONE person. Every past variant is listed in alternateNames
+  // so old references still resolve to this entity.
+  name: "Azeez Agbona O.",
+  alternateNames: ["Azeez Agbona", "Abdul-Azeez Agbona", "Azeez Agbona O."],
+  title: "Web Developer · AI Automation & Sales Funnel Expert",
+  bio: "I architect revenue-generating digital ecosystems for companies serious about growth. With 10+ years and 50+ projects across healthcare, real estate, finance, and enterprise, I build the systems businesses need to attract, convert, and retain customers at scale — from high-converting websites to AI-powered automation and end-to-end sales funnels.",
   email: "azeez.agbona.o@gmail.com",
   location: "Lagos, Nigeria",
   phone: "07069716822",
   whatsapp: "https://wa.me/2347069716822?text=Hello%20Abdul-Azeez,%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20with%20you.",
-  website: "https://harzotech.com.ng",
+  website: "https://azeezagbona.com",
 
   // Professional Stats
   stats: {
     yearsExperience: "10+",
-    projectsCompleted: "20+",
-    happyClients: "20+",
-    technologies: "10+",
+    projectsCompleted: "50+",
+    happyClients: "30+",
+    technologies: "15+",
   },
 
   // About Section
   about: {
     description: [
-      "I help businesses grow through technology. In 10+ years, I've built 50+ digital products — from SaaS platforms to AI automation systems — that drive real revenue and save thousands of hours.",
-      "My expertise spans custom web/app development, AI-powered automation, high-converting sales funnels, and SEO strategies that bring organic traffic. I've helped brands like New Telegraph, Westgate Technologies Ltd, Exclusive Smile Dental Clinic, and others achieve significant growth through integrated digital ecosystems and search optimization.",
-      "I'm not just a developer — I'm a strategic partner who understands business. From architecting enterprise systems to leading IT teams, I deliver solutions that scale. Every project is built to automate, convert, and grow.",
+      "Most businesses have great products but broken systems. In 10+ years working with 50+ companies across Nigeria, the UK, and Canada, I've built the digital infrastructure that turns visitors into revenue — SaaS platforms, AI automation engines, and complete sales funnel ecosystems that operate 24/7.",
+      "My work spans custom web and app development, AI-powered workflow automation, high-converting sales funnels, and SEO strategies engineered for compounding organic growth. Brands like New Telegraph, Immovables Group, LACIAC, and Exclusive Smile Dental Clinic have seen measurable increases in leads, conversions, and operational efficiency through the systems I've built.",
+      "I partner with companies that are serious about growth — not just looking for a vendor. Whether it's architecting an enterprise platform, designing a lead generation engine, or deploying AI automation across an entire business operation, I bring strategic thinking and technical execution under one roof.",
     ],
   },
 
@@ -472,11 +477,16 @@ export const siteConfig = {
     url: "/resume.pdf",
   },
 
+  // Countries served (drives schema areaServed + geo landing pages)
+  countriesServed: ["Nigeria", "Ghana", "Kenya", "United Kingdom", "United States", "Canada"],
+
   // SEO
   seo: {
-    title: "Abdul-Azeez Agbona - IT Specialist & Full-Stack Developer",
-    description: "I'm an experienced IT Specialist, Full-Stack Developer, SaaS Engineer, and SEO Strategist with over a decade of building scalable digital platforms powered by automation, AI/ML, CRM workflows, and API-driven architectures. I help businesses grow through high-converting sales funnels and organic SEO strategies, improving visibility, traffic, and conversions.",
-    url: "https://harzotech.com.ng",
+    title: "Azeez Agbona O. — Web Developer in Nigeria | AI Automation & Sales Funnel Expert",
+    description: "Azeez Agbona O. is a top web developer in Nigeria building revenue-generating websites, AI automation, and sales funnels. 10+ years, 50+ projects across Nigeria, Ghana, Kenya, the UK and US. Hire the developer companies trust for websites that actually convert.",
+    // ⬇️ SINGLE SOURCE OF TRUTH for the domain — canonical, OG, schema and
+    // sitemap all follow this one line.
+    url: "https://azeezagbona.com",
     image: "/headshot.jpg",
   },
 };

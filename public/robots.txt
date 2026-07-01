@@ -7,10 +7,10 @@ Allow: /
 # Disallow: /admin/
 
 # Host
-Host: https://harzotech.com.ng
+Host: https://azeezagbona.com
 
 # Sitemaps
-Sitemap: https://harzotech.com.ng/sitemap.xml
+Sitemap: https://azeezagbona.com/sitemap.xml
 
 # Crawl-delay for specific bots (optional)
 # Crawl-delay: 10

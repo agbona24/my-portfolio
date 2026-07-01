@@ -174,7 +174,7 @@ Your portfolio has been fully optimized for search engines with comprehensive SE
 #### 3. Google Search Console
 **Steps:**
 1. Go to: https://search.google.com/search-console
-2. Add property: https://harzotech.com.ng
+2. Add property: https://azeezagbona.com
 3. Verify ownership (HTML file upload or DNS)
 4. Get verification code
 5. Add to `app/layout.tsx` line 102:
@@ -183,7 +183,7 @@ Your portfolio has been fully optimized for search engines with comprehensive SE
      google: "YOUR-GOOGLE-CODE-HERE",
    }
    ```
-6. Submit sitemap: `https://harzotech.com.ng/sitemap.xml`
+6. Submit sitemap: `https://azeezagbona.com/sitemap.xml`
 
 #### 4. Google Analytics (Optional but Recommended)
 1. Create GA4 property

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdul-Azeez Agbona - Digital Growth Architect & Revenue Systems Expert</title>
+  <meta name="description" content="I build the digital systems that turn businesses into revenue machines. 10+ years. 50+ companies. Expert in sales-converting websites, AI automation, sales funnels, and software development." />
+  <meta name="author" content="Abdul-Azeez Agbona" />
+  <meta property="og:title" content="Abdul-Azeez Agbona - Digital Growth Architect" />
+  <meta property="og:description" content="I build the digital systems that turn businesses into revenue machines." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ============ Navbar ============ -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo" aria-label="Home">
+        <span class="logo-a logo-a1">A</span><span class="logo-dot"></span><span class="logo-a logo-a2">A</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#booking">Booking</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="theme-icon">🌙</span></button>
+        <a href="#" class="btn btn-gradient nav-cta" id="navResume">Resume</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ Mobile menu ============ -->
+  <div class="mobile-backdrop" id="mobileBackdrop"></div>
+  <aside class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <h2 class="gradient-text">Menu</h2>
+      <button class="menu-close" id="menuClose" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+      </button>
+    </div>
+    <nav class="mobile-links">
+      <a href="#about"><span class="dot"></span>About</a>
+      <a href="#work"><span class="dot"></span>Work</a>
+      <a href="#skills"><span class="dot"></span>Skills</a>
+      <a href="#testimonials"><span class="dot"></span>Testimonials</a>
+      <a href="#booking"><span class="dot"></span>Booking</a>
+      <a href="#contact"><span class="dot"></span>Contact</a>
+    </nav>
+    <div class="mobile-menu-footer">
+      <a href="#" class="btn btn-whatsapp" id="mobileWhatsapp" target="_blank" rel="noopener noreferrer">WhatsApp Me</a>
+    </div>
+  </aside>
+
+  <!-- ============ Hero ============ -->
+  <header class="hero" id="home">
+    <div class="hero-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="grid-pattern"></div>
+    </div>
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <div class="badge"><span>🏆</span> Trusted by 30+ Companies Across 5 Industries</div>
+        <h1 class="hero-title">
+          <span class="hero-greeting" id="greeting">Hello! 👋</span>
+          <span class="hero-im">I'm</span>
+          <span class="gradient-text hero-name" id="heroName"></span>
+        </h1>
+        <div class="typing-wrap"><span class="gradient-text typing-text" id="typingText"></span><span class="cursor"></span></div>
+        <p class="hero-desc" id="heroDesc"></p>
+        <div class="hero-cta">
+          <a href="#work" class="btn btn-gradient btn-lg">See Client Results <span class="arrow">→</span></a>
+          <a href="#" class="btn btn-outline btn-lg" id="heroWhatsapp" target="_blank" rel="noopener noreferrer">
+            <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
+            Book a Strategy Call
+          </a>
+        </div>
+        <div class="hero-socials" id="heroSocials"></div>
+      </div>
+      <div class="hero-stats" id="heroStats"></div>
+    </div>
+    <div class="scroll-indicator"><span>Scroll</span><div class="mouse"><div class="mouse-wheel"></div></div></div>
+  </header>
+
+  <!-- ============ Client Logos ============ -->
+  <section class="clients">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Trusted By Industry Leaders</span>
+        <h2 class="clients-title">Companies I've Worked With</h2>
+      </div>
+    </div>
+    <div class="marquee" id="marquee">
+      <div class="marquee-track" id="marqueeTrack"></div>
+    </div>
+    <div class="container">
+      <div class="trust-row reveal">
+        <div class="trust-item"><span class="check">✓</span> 100% Project Delivery</div>
+        <div class="trust-item"><span class="check">✓</span> 5-Star Client Reviews</div>
+        <div class="trust-item"><span class="check">✓</span> Long-Term Partnerships</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ About (dark) ============ -->
+  <section class="section about-dark" id="about">
+    <div class="about-bg"><div class="ablob ablob-1"></div><div class="ablob ablob-2"></div></div>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="pill pill-glass"><span>🏆</span> The Track Record</span>
+        <h2 class="section-title light">Systems That Drive Real Growth</h2>
+        <p class="section-sub light">A decade of building revenue-generating digital infrastructure for companies that compete to win</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-media reveal">
+          <div class="about-photo">
+            <div class="about-avatar">AA</div>
+            <div class="about-photo-badge"><span>🏆</span> 10+ Years</div>
+          </div>
+          <div class="about-pills" id="aboutPills"></div>
+        </div>
+        <div class="about-content reveal">
+          <div class="about-text" id="aboutText"></div>
+          <div class="about-stats" id="aboutStats"></div>
+          <div class="about-cta">
+            <a href="#work" class="btn btn-gradient btn-lg">View Case Studies <span class="arrow">→</span></a>
+            <a href="#" class="btn btn-glass btn-lg" id="aboutWhatsapp" target="_blank" rel="noopener noreferrer">Schedule a Consultation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Services ============ -->
+  <section class="section section-alt" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="pill pill-purple"><span>🏗️</span> Growth Systems I Build</span>
+        <h2 class="section-title">Proven Revenue & Growth Systems</h2>
+        <p class="section-sub">I don't build websites. I build business systems engineered to attract, convert, and retain customers. Every solution is designed with one outcome in mind: measurable growth.</p>
+      </div>
+      <div class="services-grid" id="servicesGrid"></div>
+      <div class="section-cta reveal">
+        <a href="#contact" class="btn btn-gradient btn-lg">Book a Strategy Session <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Stats (dark) ============ -->
+  <section class="stats-dark">
+    <div class="stats-bg"><div class="sblob sblob-1"></div><div class="sblob sblob-2"></div></div>
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-title light">Numbers That Speak</h2>
+        <p class="section-sub light">A track record of delivering excellence and driving results</p>
+      </div>
+      <div class="stats-grid" id="statsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ Work ============ -->
+  <section class="section" id="work">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="pill pill-blue"><span>💼</span> Portfolio Showcase</span>
+        <h2 class="section-title">Crafting Digital Excellence</h2>
+        <p class="section-sub">Transforming ideas into powerful digital solutions. From SaaS platforms to enterprise systems, each project represents a unique challenge solved with innovation and expertise.</p>
+        <div class="work-meta" id="workMeta"></div>
+      </div>
+
+      <div class="work-controls reveal">
+        <div class="search-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <input type="text" id="workSearch" placeholder="Search projects by name, description, or technology..." />
+        </div>
+        <div class="work-filters" id="workFilters"></div>
+        <p class="work-count" id="workCount"></p>
+      </div>
+
+      <div class="work-grid" id="workGrid"></div>
+
+      <div class="work-more reveal" id="workMore">
+        <h3>More Amazing Projects</h3>
+        <p>Diverse portfolio across multiple industries and technologies</p>
+      </div>
+      <div class="work-grid-compact" id="workGridCompact"></div>
+
+      <div class="work-cta reveal">
+        <div class="work-cta-inner">
+          <h3>Ready to Start Your Project?</h3>
+          <p>Let's discuss how I can help bring your vision to life with cutting-edge technology and proven expertise.</p>
+          <div class="work-cta-btns">
+            <a href="#booking" class="btn btn-white">Book Consultation</a>
+            <a href="#" class="btn btn-ghost-white" id="workWhatsapp" target="_blank" rel="noopener noreferrer">WhatsApp Me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Process ============ -->
+  <section class="section section-alt" id="process">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="pill pill-green"><span>⚡</span> My Process</span>
+        <h2 class="section-title">How I Work</h2>
+        <p class="section-sub">A proven 5-step methodology that ensures successful project delivery and client satisfaction.</p>
+      </div>
+      <div class="process-timeline" id="processTimeline"></div>
+    </div>
+  </section>
+
+  <!-- ============ Skills ============ -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-title gradient-animated">Skills & Expertise</h2>
+        <div class="title-underline"></div>
+        <p class="section-sub">Mastering technologies and methodologies that drive innovation and business success</p>
+      </div>
+      <div class="skills-grid" id="skillsGrid"></div>
+
+      <div class="education reveal">
+        <div class="edu-head"><div class="edu-icon">🎓</div><h3>Education & Honors</h3></div>
+        <div class="edu-card edu-blue">
+          <h4>Higher National Diploma (HND) in Computer Science</h4>
+          <p class="edu-school">Moshood Abiola Polytechnic, Abeokuta</p>
+          <p class="edu-meta"><span>January 2014 – April 2019</span><span class="edu-dot"></span><span class="edu-badge">Upper Class</span></p>
+          <div class="edu-tags"><span>Database Management</span><span>Web Development</span><span>Network Administration</span></div>
+        </div>
+        <div class="edu-card edu-purple">
+          <h4>Aspiring Entrepreneur Program</h4>
+          <p class="edu-school">Fate Foundation Business School, Lagos, Nigeria</p>
+        </div>
+        <div class="edu-card edu-green">
+          <h4>Certifications & Honours</h4>
+          <ul class="edu-list">
+            <li><span class="check">✓</span> HP Certified Sales Specialist</li>
+            <li><span class="check">✓</span> Letter of Excellence – Lagos State Chamber of Commerce & International Arbitration Centre</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Testimonials ============ -->
+  <section class="section testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-title gradient-animated">Client Testimonials</h2>
+        <p class="section-sub">Trusted by industry leaders and innovative companies worldwide</p>
+      </div>
+      <div class="carousel">
+        <div class="carousel-viewport"><div class="carousel-track" id="carouselTrack"></div></div>
+        <div class="carousel-nav">
+          <button class="carousel-btn" id="prevBtn" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg></button>
+          <button class="carousel-btn" id="nextBtn" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg></button>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+      <div class="section-cta reveal">
+        <p class="cta-line">Ready to join these successful clients?</p>
+        <div class="work-cta-btns center">
+          <a href="#contact" class="btn btn-gradient btn-lg">Start Your Project</a>
+          <a href="#" class="btn btn-outline btn-lg" id="testimonialsWhatsapp" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Booking ============ -->
+  <section class="section section-alt booking" id="booking">
+    <div class="container">
+      <div class="booking-card reveal">
+        <h2 class="section-title">Ready to build your <span class="gradient-text">revenue engine?</span></h2>
+        <p class="section-sub">Book a free strategy call. We'll map out exactly what your business needs to grow.</p>
+        <a href="#" class="btn btn-gradient btn-lg" id="bookingWhatsapp" target="_blank" rel="noopener noreferrer">Book a Strategy Call →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Contact ============ -->
+  <section class="section" id="contact">
+    <div class="container container-narrow">
+      <div class="section-head reveal">
+        <h2 class="section-title fade-title">Have a Question?</h2>
+        <p class="section-sub">Send me a message and I'll respond within 24 hours</p>
+      </div>
+      <div class="contact-card reveal">
+        <form class="contact-form" id="contactForm">
+          <div class="field-row">
+            <div class="field"><label for="name">Name *</label><input type="text" id="name" name="name" required placeholder="Your name" /></div>
+            <div class="field"><label for="email">Email *</label><input type="email" id="email" name="email" required placeholder="your@email.com" /></div>
+          </div>
+          <div class="field"><label for="subject">Subject *</label><input type="text" id="subject" name="subject" required placeholder="What's this about?" /></div>
+          <div class="field"><label for="message">Message *</label><textarea id="message" name="message" rows="6" required placeholder="Tell me about your project..."></textarea></div>
+          <button type="submit" class="btn btn-gradient btn-lg btn-block">Send Message</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+        <div class="contact-alt">
+          <p>Or reach out directly</p>
+          <div class="contact-alt-row">
+            <a href="#" class="btn btn-whatsapp" id="contactWhatsapp" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+            <a href="#" class="contact-email-link" id="contactEmail"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <div class="footer-grid-bg"></div>
+    <div class="footer-wave">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="url(#fg)" fill-opacity="0.3"/><defs><linearGradient id="fg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="50%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#EC4899"/></linearGradient></defs></svg>
+    </div>
+    <div class="container footer-inner">
+      <div class="footer-cols">
+        <div class="footer-brand">
+          <h3 class="footer-name gradient-text" id="footerName"></h3>
+          <div class="footer-status"><span class="status-dot"></span> Available for new projects</div>
+          <p class="footer-title" id="footerTitle"></p>
+          <div class="footer-stats" id="footerStats"></div>
+        </div>
+        <div class="footer-col">
+          <h4><span class="bar bar-blue"></span> Navigate</h4>
+          <a href="#home">Home</a><a href="#about">About</a><a href="#work">Projects</a>
+          <a href="#skills">Skills</a><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4><span class="bar bar-purple"></span> Expertise</h4>
+          <span>Web Development</span><span>E-commerce</span><span>Digital Marketing</span>
+          <span>Sales Funnels</span><span>SEO & Analytics</span><span>IT Consulting</span>
+        </div>
+        <div class="footer-col">
+          <h4><span class="bar bar-pink"></span> Connect</h4>
+          <div class="footer-socials" id="footerSocials"></div>
+          <div class="footer-contact">
+            <a id="footerEmail"><span>✉️</span> <span class="fc-text"></span></a>
+            <a id="footerPhone"><span>📞</span> <span class="fc-text"></span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-cta reveal">
+        <div class="footer-cta-inner">
+          <div>
+            <h3>Let's Build Something Amazing</h3>
+            <p>Transform your vision into reality. Let's talk about your next project.</p>
+          </div>
+          <div class="work-cta-btns">
+            <a href="#contact" class="btn btn-white">Start Project <span class="arrow">→</span></a>
+            <a href="#" class="btn btn-whatsapp" id="footerWhatsapp" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Abdul-Azeez Agbona • All rights reserved</p>
+        <p class="footer-built">Crafted with <span class="heart">❤️</span> using <span class="tech-chip">HTML</span><span class="tech-chip">CSS</span><span class="tech-chip">JavaScript</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="#" class="float-whatsapp" id="floatWhatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

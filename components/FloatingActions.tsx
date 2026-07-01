@@ -2,8 +2,10 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function FloatingActions() {
+  const pathname = usePathname();
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
 
@@ -56,6 +58,12 @@ export default function FloatingActions() {
       color: "bg-red-500 hover:bg-red-600",
     },
   ];
+
+  // Keep the sales landing pages clean — no floating portfolio widgets there.
+  const salesPages = ["/online-sales-machine", "/ai-website-agency"];
+  if (salesPages.some((p) => pathname?.startsWith(p))) {
+    return null;
+  }
 
   return (
     <>
