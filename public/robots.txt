@@ -38,3 +38,32 @@ Allow: /
 # Yandex Bot
 User-agent: Yandex
 Allow: /
+
+# AI crawlers / answer engines — explicitly allowed for AEO (get cited by
+# ChatGPT, Perplexity, Claude, Google AI Overviews and Common Crawl-based tools)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
